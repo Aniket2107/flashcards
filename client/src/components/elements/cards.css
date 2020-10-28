@@ -1,0 +1,21 @@
+.flipping_card{
+    margin: 20px 0;
+}
+
+.card-blue{
+    background: linear-gradient(to bottom right, #13f1fc, #0470dc);
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+
+.card-green{
+    background: linear-gradient(to bottom right, #c3ec52,#0ba29d);
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+.card-purple{
+    background: linear-gradient(to bottom right, #C56CD6,#3425AF);
+    color: white;
+    border-radius: 5px;
+    padding: 20px 10px;
+}

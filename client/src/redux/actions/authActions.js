@@ -56,7 +56,7 @@ export const logout = () => {
   };
 };
 
-export const tokenConfig = (getState = Function) => {
+export const tokenConfig = (getState) => {
   const token = getState().auth.token;
 
   const config = {

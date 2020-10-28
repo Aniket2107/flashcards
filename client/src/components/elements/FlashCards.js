@@ -13,21 +13,22 @@ function FlashCards({ card, getCards }) {
   const cards = card.items;
 
   return (
-    <div className="container">
+    <div style={{ background: "black", height: "100vh" }}>
       <Navbar />
-      <div style={{ float: "right" }}>
-        <Link to="/addCards" className="btn btn-primary">
-          Add Cards
-        </Link>
-      </div>
-      <div className="mt-4">
-        {card.loading && <div className="lead">Loading ...</div>}
-        {cards?.map((cardM, idx) => (
-          <div key={idx}>
-            <Card card={cardM} />
-            <br />
-          </div>
-        ))}
+      <div className="container">
+        <div style={{ float: "right" }}>
+          <Link to="/addCards" className="btn btn-primary">
+            Add Cards
+          </Link>
+        </div>
+        <br />
+        <br />
+        <div className="row">
+          {card.loading && <div className="lead">Loading ...</div>}
+          {cards?.map((cardM, idx) => (
+            <Card card={cardM} key={idx} />
+          ))}
+        </div>
       </div>
     </div>
   );

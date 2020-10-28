@@ -5,7 +5,7 @@ import { CORRECT, WRONG } from "./types";
 
 export const right = (data) => (dispatch, getState) => {
   let body = {
-    boxId: 2,
+    boxId: setright(data),
   };
   axios
     .put(`${API}card/update/${data._id}`, body, tokenConfig(getState))
@@ -19,7 +19,7 @@ export const right = (data) => (dispatch, getState) => {
 
 export const wrong = (data) => (dispatch, getState) => {
   let body = {
-    boxId: 1,
+    boxId: setwrong(data),
   };
   axios
     .put(`${API}card/update/${data._id}`, body, tokenConfig(getState))
@@ -27,4 +27,18 @@ export const wrong = (data) => (dispatch, getState) => {
       dispatch({ type: WRONG, payload: res.data.data });
     })
     .catch((err) => console.log(err));
+};
+
+export const setright = (data) => {
+  if (data.boxId === 1 || data.boxId === 2) {
+    return data.boxId + 1;
+  }
+  return 3;
+};
+
+export const setwrong = (data) => {
+  if (data.boxId === 2 || data.boxId == 3) {
+    return data.boxId - 1;
+  }
+  return 1;
 };

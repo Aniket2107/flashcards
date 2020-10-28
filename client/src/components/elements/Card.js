@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
+import './cards.css';
+
 
 function Card({ card }) {
   const [isFlipped, SetisFlipped] = useState(false);
@@ -10,13 +12,11 @@ function Card({ card }) {
   };
 
   return (
-    <div style={{ marginTop: "50px" }}>
+    <div className='col-md-6'>
+      <div className="flipping_card">
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
         <div
-          className="container card"
-          style={{
-            border: "1px solid grey",
-          }}
+          className="card-blue"
           onClick={handleClick}
         >
           <spna>Question</spna>
@@ -24,16 +24,13 @@ function Card({ card }) {
             <strong>{card.question}</strong>
           </div>
           <div>
-            <i className="fa fa-rotate-right" style={{ marginRight: "2px" }} />
+            <i className="fa fa-rotate-right" />
             Flip
           </div>
         </div>
 
         <div
-          className="container card"
-          style={{
-            border: "1px solid grey",
-          }}
+          className="card-green"
           onClick={handleClick}
         >
           <spna>Answer</spna>
@@ -41,11 +38,12 @@ function Card({ card }) {
             <strong>{card.answer}</strong>
           </div>
           <div>
-            <i className="fa fa-rotate-left" style={{ marginRight: "2px" }} />
+            <i className="fa fa-rotate-left" />
             Flip
           </div>
         </div>
       </ReactCardFlip>
+      </div>
     </div>
   );
 }

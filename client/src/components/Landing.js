@@ -4,9 +4,10 @@ import Navbar from "./Navbar";
 
 function Landing() {
   return (
-    <div className="container">
+    <div className="">
       <Navbar />
 
+      <div className="container">
       <div
         className="d-flex justify-content-center align-items-center row"
         style={{ marginTop: "50px" }}
@@ -40,6 +41,8 @@ function Landing() {
           <img src="/home.png" className="img-responsive" alt="Langing" />
         </div>
       </div>
+      </div>
+      
     </div>
   );
 }

@@ -7,6 +7,8 @@ import { API } from "../../backend";
 
 import { right, wrong } from "../../redux/actions/boxAction";
 import Navbar from "../Navbar";
+import './cards.css';
+
 
 function Memorize({ card, right, wrong }) {
   const [currentQuestion, SetcurrentQuestion] = useState(0);
@@ -57,8 +59,9 @@ function Memorize({ card, right, wrong }) {
   };
 
   return (
-    <div className="container">
+    <div className="" style={{background: 'black', height: '100vh'}}>
       <Navbar />
+      <div className="container">
       <div>
         <Link
           to="/boxes"
@@ -77,18 +80,15 @@ function Memorize({ card, right, wrong }) {
       ) : (
         <div
           style={{
-            border: "1px solid gray",
-            width: "500px",
-            height: "70px",
-            marginTop: "50px",
+            maxWidth: '500px'
           }}
         >
           <div className="question-count">
-            <span>Question {currentQuestion + 1}</span>/{questions.length}
+            <span style={{color: "white"}}>Question {currentQuestion + 1}/{questions.length}</span>
           </div>
           <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
             <div>
-              <div className="text-center lead m-2">
+              <div className="text-center lead m-2 card-blue">
                 {questions[currentQuestion].question}
               </div>
               <div>
@@ -99,7 +99,7 @@ function Memorize({ card, right, wrong }) {
             </div>
             <div>
               <div>
-                <div className="text-center lead">
+                <div className="text-center lead card-purple">
                   {questions[currentQuestion].answer}
                 </div>
                 <div>
@@ -115,6 +115,7 @@ function Memorize({ card, right, wrong }) {
           </ReactCardFlip>
         </div>
       )}
+      </div>
     </div>
   );
 }
