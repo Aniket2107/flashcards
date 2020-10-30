@@ -37,7 +37,7 @@ export const setright = (data) => {
 };
 
 export const setwrong = (data) => {
-  if (data.boxId === 2 || data.boxId == 3) {
+  if (data.boxId === 2 || data.boxId === 3) {
     return data.boxId - 1;
   }
   return 1;

@@ -2,11 +2,29 @@ import React from "react";
 import { Avatar } from "@material-ui/core";
 import Navbar from "./Navbar";
 import { connect } from "react-redux";
+import axios from "axios";
+import Chart from "./elements/Chart";
+import { API } from "../backend";
 
 function Profile({ auth }) {
   const name = auth.user.name;
   const email = auth.user.email;
+  let scoreData = [];
 
+  const getData = () => {
+    const token = localStorage.getItem("token");
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    axios
+      .get(`${API}user/score`, config)
+      .then((res) => (scoreData = res.data.data))
+      .catch((err) => console.log(err));
+  };
   return (
     <div style={{ background: "color", height: "100vh" }}>
       <Navbar />
@@ -18,7 +36,7 @@ function Profile({ auth }) {
           transition: "all .5s ease-in-out",
         }}
       >
-        {" "}
+        {getData()}
         <center>
           <div className="row d-flex justify-content-center align-items-center">
             <div

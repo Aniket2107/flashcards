@@ -74,6 +74,8 @@ function Boxes({ card, getCards }) {
           {box1 && (
             <>
               <h4 style={{ marginBottom: "-45px", color: "red" }}>Box 1</h4>
+              <br />
+              <br />
               {cards1?.map((card1, idx) => (
                 <div key={idx}>
                   <Card card={card1} />
@@ -84,6 +86,8 @@ function Boxes({ card, getCards }) {
           {box2 && (
             <>
               <h4 style={{ marginBottom: "-45px", color: "blue" }}>Box 2</h4>
+              <br />
+              <br />
               {cards2?.map((card2, idx) => (
                 <div key={idx}>
                   <Card card={card2} />
@@ -93,7 +97,9 @@ function Boxes({ card, getCards }) {
           )}
           {box3 && (
             <>
-              <h4 style={{ marginBottom: "-45px", color: "blue" }}>Box 2</h4>
+              <h4 style={{ marginBottom: "-45px", color: "green" }}>Box 3</h4>
+              <br />
+              <br />
               {cards3?.map((card3, idx) => (
                 <div key={idx}>
                   <Card card={card3} />
